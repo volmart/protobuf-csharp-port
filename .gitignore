@@ -38,3 +38,9 @@ mono/TestResult.xml
 mono/.libs
 mono/*.exe
 mono/*.dll
+
+*.pdb
+*\bin*
+*Release*
+*Debug*
+*.vs/

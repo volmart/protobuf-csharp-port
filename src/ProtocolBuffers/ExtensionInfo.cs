@@ -56,11 +56,11 @@ namespace Google.ProtocolBuffers
         /// </summary>
         public IMessageLite DefaultInstance { get; private set; }
 
-        internal ExtensionInfo(FieldDescriptor descriptor) : this(descriptor, null)
+        public ExtensionInfo(FieldDescriptor descriptor) : this(descriptor, null)
         {
         }
 
-        internal ExtensionInfo(FieldDescriptor descriptor, IMessageLite defaultInstance)
+        public ExtensionInfo(FieldDescriptor descriptor, IMessageLite defaultInstance)
         {
             Descriptor = descriptor;
             DefaultInstance = defaultInstance;
