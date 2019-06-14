@@ -134,14 +134,6 @@ namespace Google.ProtocolBuffers.ProtoGen
             CSharpFileOptions fileOptions = descriptor.CSharpOptions;
 
             string filename = descriptor.CSharpOptions.UmbrellaClassname + descriptor.CSharpOptions.FileExtension;
-            if (duplicates)
-            {
-                string namepart;
-                if (String.IsNullOrEmpty(descriptor.Name) || String.IsNullOrEmpty(namepart = Path.GetFileNameWithoutExtension(descriptor.Name)))
-                    throw new ApplicationException("Duplicate UmbrellaClassname options created a file name collision.");
-
-                filename = namepart + descriptor.CSharpOptions.FileExtension;
-            }
 
             string outputDirectory = descriptor.CSharpOptions.OutputDirectory;
             if (fileOptions.ExpandNamespaceDirectories)
