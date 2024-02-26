@@ -45,6 +45,11 @@ using Google.ProtocolBuffers.FieldAccess;
 
 namespace Google.ProtocolBuffers
 {
+    public interface IGeneratedMessage
+    {
+        int GetExtFieldNumber();
+    }
+
     /// <summary>
     /// All generated protocol message classes extend this class. It implements
     /// most of the IMessage interface using reflection. Users

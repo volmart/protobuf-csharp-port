@@ -55,7 +55,8 @@ namespace Google.ProtocolBuffers
         /// The serialized size if it's already been computed, or null
         /// if we haven't computed it yet.
         /// </summary>
-        private int? memoizedSize = null;
+        private int? memorizedSize = null;
+        private int? memorizedHashCode = null;
 
         #region Unimplemented members of IMessage
 
@@ -183,9 +184,9 @@ namespace Google.ProtocolBuffers
         {
             get
             {
-                if (memoizedSize != null)
+                if (memorizedSize != null)
                 {
-                    return memoizedSize.Value;
+                    return memorizedSize.Value;
                 }
 
                 int size = 0;
@@ -230,7 +231,7 @@ namespace Google.ProtocolBuffers
                     size += unknownFields.SerializedSize;
                 }
 
-                memoizedSize = size;
+                memorizedSize = size;
                 return size;
             }
         }
@@ -247,11 +248,23 @@ namespace Google.ProtocolBuffers
             {
                 return true;
             }
-            IMessage otherMessage = other as IMessage;
-            if (otherMessage == null || otherMessage.DescriptorForType != DescriptorForType)
+
+            if (!(other is IMessage otherMessage) || 
+                otherMessage.DescriptorForType != DescriptorForType)
             {
                 return false;
             }
+
+            if (SerializedSize != otherMessage.SerializedSize)
+            {
+                return false;
+            }
+
+            if (GetHashCode() != otherMessage.GetHashCode())
+            {
+                return false;
+            }
+
             return Dictionaries.Equals(AllFields, otherMessage.AllFields) &&
                    UnknownFields.Equals(otherMessage.UnknownFields);
         }
@@ -262,10 +275,18 @@ namespace Google.ProtocolBuffers
         /// </summary>
         public override int GetHashCode()
         {
+            if (memorizedHashCode.HasValue)
+            {
+                return memorizedHashCode.Value;
+            }
+
             int hash = 41;
             hash = (19*hash) + DescriptorForType.GetHashCode();
             hash = (53*hash) + Dictionaries.GetHashCode(AllFields);
             hash = (29*hash) + UnknownFields.GetHashCode();
+
+            memorizedHashCode = hash;
+
             return hash;
         }
 

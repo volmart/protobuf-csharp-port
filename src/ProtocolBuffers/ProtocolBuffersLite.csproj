@@ -1,103 +1,88 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <EnvironmentFlavor>CLIENTPROFILE</EnvironmentFlavor>
     <EnvironmentTemplate>NET35</EnvironmentTemplate>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6969BDCE-D925-43F3-94AC-A531E6DF2591}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Google.ProtocolBuffers</RootNamespace>
     <AssemblyName>Google.ProtocolBuffersLite</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\keys\Google.ProtocolBuffers.snk</AssemblyOriginatorKeyFile>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>bin\NET35\Debug</OutputPath>
     <IntermediateOutputPath>obj\NET35\Debug\</IntermediateOutputPath>
     <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
     <NoWarn>1591, 1570, 1571, 1572, 1573, 1574</NoWarn>
     <DefineConstants>DEBUG;TRACE;LITE;$(EnvironmentFlavor);$(EnvironmentTemplate)</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\NET35\Release</OutputPath>
+    <OutputPath>bin\Release</OutputPath>
     <IntermediateOutputPath>obj\NET35\Release\</IntermediateOutputPath>
-    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
     <NoWarn>1591, 1570, 1571, 1572, 1573, 1574</NoWarn>
     <DefineConstants>TRACE;LITE;$(EnvironmentFlavor);$(EnvironmentTemplate)</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="AbstractBuilder.cs" />
+    <Compile Remove="AbstractMessage.cs" />
+    <Compile Remove="Delegates.cs" />
+    <Compile Remove="DescriptorProtos\CSharpOptions.cs" />
+    <Compile Remove="DescriptorProtos\DescriptorProtoFile.cs" />
+    <Compile Remove="DescriptorProtos\IDescriptorProto.cs" />
+    <Compile Remove="DescriptorProtos\PartialClasses.cs" />
+    <Compile Remove="Descriptors\DescriptorBase.cs" />
+    <Compile Remove="Descriptors\DescriptorPool.cs" />
+    <Compile Remove="Descriptors\DescriptorUtil.cs" />
+    <Compile Remove="Descriptors\DescriptorValidationException.cs" />
+    <Compile Remove="Descriptors\EnumDescriptor.cs" />
+    <Compile Remove="Descriptors\EnumValueDescriptor.cs" />
+    <Compile Remove="Descriptors\FieldDescriptor.cs" />
+    <Compile Remove="Descriptors\FileDescriptor.cs" />
+    <Compile Remove="Descriptors\IDescriptor.cs" />
+    <Compile Remove="Descriptors\IndexedDescriptorBase.cs" />
+    <Compile Remove="Descriptors\MessageDescriptor.cs" />
+    <Compile Remove="Descriptors\MethodDescriptor.cs" />
+    <Compile Remove="Descriptors\PackageDescriptor.cs" />
+    <Compile Remove="Descriptors\ServiceDescriptor.cs" />
+    <Compile Remove="DynamicMessage.cs" />
+    <Compile Remove="ExtendableBuilder.cs" />
+    <Compile Remove="ExtendableMessage.cs" />
+    <Compile Remove="ExtensionInfo.cs" />
+    <Compile Remove="ExtensionRegistry.cs" />
+    <Compile Remove="FieldAccess\FieldAccessorTable.cs" />
+    <Compile Remove="FieldAccess\IFieldAccessor.cs" />
+    <Compile Remove="FieldAccess\ReflectionUtil.cs" />
+    <Compile Remove="FieldAccess\RepeatedEnumAccessor.cs" />
+    <Compile Remove="FieldAccess\RepeatedMessageAccessor.cs" />
+    <Compile Remove="FieldAccess\RepeatedPrimitiveAccessor.cs" />
+    <Compile Remove="FieldAccess\SingleEnumAccessor.cs" />
+    <Compile Remove="FieldAccess\SingleMessageAccessor.cs" />
+    <Compile Remove="FieldAccess\SinglePrimitiveAccessor.cs" />
+    <Compile Remove="GeneratedBuilder.cs" />
+    <Compile Remove="GeneratedExtensionBase.cs" />
+    <Compile Remove="GeneratedMessage.cs" />
+    <Compile Remove="GeneratedRepeatExtension.cs" />
+    <Compile Remove="GeneratedSingleExtension.cs" />
+    <Compile Remove="IBuilder.cs" />
+    <Compile Remove="IMessage.cs" />
+    <Compile Remove="IRpcChannel.cs" />
+    <Compile Remove="IRpcController.cs" />
+    <Compile Remove="IService.cs" />
+    <Compile Remove="MessageStreamIterator.cs" />
+    <Compile Remove="MessageStreamWriter.cs" />
+    <Compile Remove="MessageUtil.cs" />
+    <Compile Remove="NameHelpers.cs" />
+    <Compile Remove="RpcUtil.cs" />
+    <Compile Remove="TextFormat.cs" />
+    <Compile Remove="TextGenerator.cs" />
+    <Compile Remove="TextTokenizer.cs" />
+    <Compile Remove="UnknownField.cs" />
+    <Compile Remove="UnknownFieldSet.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AbstractBuilderLite.cs" />
-    <Compile Include="AbstractMessageLite.cs" />
-    <Compile Include="ByteArray.cs" />
-    <Compile Include="CodedOutputStream.ComputeSize.cs" />
-    <Compile Include="Collections\Dictionaries.cs" />
-    <Compile Include="Collections\Enumerables.cs" />
-    <Compile Include="Collections\IPopsicleList.cs" />
-    <Compile Include="Collections\Lists.cs" />
-    <Compile Include="Collections\PopsicleList.cs" />
-    <Compile Include="Collections\ReadOnlyDictionary.cs" />
-    <Compile Include="CustomSerialization.cs" />
-    <Compile Include="Descriptors\FieldMappingAttribute.cs" />
-    <Compile Include="Descriptors\FieldType.cs" />
-    <Compile Include="Descriptors\MappedType.cs" />
-    <Compile Include="EnumLite.cs" />
-    <Compile Include="ExtendableBuilderLite.cs" />
-    <Compile Include="ExtendableMessageLite.cs" />
-    <Compile Include="FieldSet.cs" />
-    <Compile Include="FrameworkPortability.cs" />
-    <Compile Include="GeneratedBuilderLite.cs" />
-    <Compile Include="GeneratedExtensionLite.cs" />
-    <Compile Include="GeneratedMessageLite.cs" />
-    <Compile Include="ICodedInputStream.cs" />
-    <Compile Include="ICodedOutputStream.cs" />
-    <Compile Include="IRpcDispatch.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ByteString.cs" />
-    <Compile Include="CodedInputStream.cs" />
-    <Compile Include="CodedOutputStream.cs" />
-    <Compile Include="ExtensionRegistryLite.cs" />
-    <Compile Include="IBuilderLite.cs" />
-    <Compile Include="IMessageLite.cs" />
-    <Compile Include="InvalidProtocolBufferException.cs" />
-    <Compile Include="SortedList.cs" />
-    <Compile Include="ThrowHelper.cs" />
-    <Compile Include="UninitializedMessageException.cs" />
-    <Compile Include="WireFormat.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

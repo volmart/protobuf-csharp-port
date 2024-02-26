@@ -44,3 +44,4 @@ mono/*.dll
 *Release*
 *Debug*
 *.vs/
+/src/*/obj/*
