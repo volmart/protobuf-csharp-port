@@ -1,5 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proto", "proto", "{1F896D5C-5FC2-4671-9216-781CB8187EC7}"
 	ProjectSection(SolutionItems) = preProject
 		..\protos\tutorial\addressbook.proto = ..\protos\tutorial\addressbook.proto
@@ -35,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unittest", "unittest", "{C8
 		..\protos\extest\unittest_rpc_interop_lite.proto = ..\protos\extest\unittest_rpc_interop_lite.proto
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolBuffers", "ProtocolBuffers\ProtocolBuffers.csproj", "{6908BDCE-D925-43F3-94AC-A531E6DF2591}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtocolBuffers", "ProtocolBuffers\ProtocolBuffers.csproj", "{6908BDCE-D925-43F3-94AC-A531E6DF2591}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolBuffers.Test", "ProtocolBuffers.Test\ProtocolBuffers.Test.csproj", "{DD01ED24-3750-4567-9A23-1DB676A15610}"
 EndProject
@@ -51,7 +53,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoBench", "ProtoBench\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoDump", "ProtoDump\ProtoDump.csproj", "{D7282E99-2DC3-405B-946F-177DB2FD2AE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolBuffersLite", "ProtocolBuffers\ProtocolBuffersLite.csproj", "{6969BDCE-D925-43F3-94AC-A531E6DF2591}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtocolBuffersLite", "ProtocolBuffers\ProtocolBuffersLite.csproj", "{6969BDCE-D925-43F3-94AC-A531E6DF2591}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolBuffersLite.Test", "ProtocolBuffersLite.Test\ProtocolBuffersLite.Test.csproj", "{EE01ED24-3750-4567-9A23-1DB676A15610}"
 EndProject
@@ -73,9 +75,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{66ED1950
 		..\build\target.csproj = ..\build\target.csproj
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolBuffers.Serialization", "ProtocolBuffers.Serialization\ProtocolBuffers.Serialization.csproj", "{231391AF-449C-4A39-986C-AD7F270F4750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtocolBuffers.Serialization", "ProtocolBuffers.Serialization\ProtocolBuffers.Serialization.csproj", "{231391AF-449C-4A39-986C-AD7F270F4750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolBuffersLite.Serialization", "ProtocolBuffers.Serialization\ProtocolBuffersLite.Serialization.csproj", "{E067A59D-9D0A-4A1F-92B1-38E4457241D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtocolBuffersLite.Serialization", "ProtocolBuffers.Serialization\ProtocolBuffersLite.Serialization.csproj", "{E067A59D-9D0A-4A1F-92B1-38E4457241D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{0D7CDA8F-1BBF-4E0F-8D35-31AEA21A96E6}"
 EndProject
@@ -201,15 +203,18 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C8D3015A-EA39-4F03-AEEC-3FF1F2087A12} = {1F896D5C-5FC2-4671-9216-781CB8187EC7}
-		{FA9F5250-FDDC-48B8-832E-96E0464A02E6} = {1F896D5C-5FC2-4671-9216-781CB8187EC7}
-		{C268DA4C-4004-47DA-AF23-44C983281A68} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
-		{EE01ED24-3750-4567-9A23-1DB676A15610} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
-		{EEFFED24-3750-4567-9A23-1DB676A15610} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
 		{DD01ED24-3750-4567-9A23-1DB676A15610} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
-		{C1024C9C-8176-48C3-B547-B9F6DF6B80A6} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
+		{C268DA4C-4004-47DA-AF23-44C983281A68} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
 		{A31F5FB2-4FF3-432A-B35B-5CD203606311} = {75D5D25A-01A6-4594-957F-5993FB83F450}
+		{8F09AF72-3327-4FA7-BC09-070B80221AB9} = {0D7CDA8F-1BBF-4E0F-8D35-31AEA21A96E6}
 		{C7A4A435-2813-41C8-AA87-BD914BA5223D} = {0D7CDA8F-1BBF-4E0F-8D35-31AEA21A96E6}
 		{D7282E99-2DC3-405B-946F-177DB2FD2AE2} = {0D7CDA8F-1BBF-4E0F-8D35-31AEA21A96E6}
-		{8F09AF72-3327-4FA7-BC09-070B80221AB9} = {0D7CDA8F-1BBF-4E0F-8D35-31AEA21A96E6}
+		{EE01ED24-3750-4567-9A23-1DB676A15610} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
+		{EEFFED24-3750-4567-9A23-1DB676A15610} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
+		{FA9F5250-FDDC-48B8-832E-96E0464A02E6} = {1F896D5C-5FC2-4671-9216-781CB8187EC7}
+		{C1024C9C-8176-48C3-B547-B9F6DF6B80A6} = {C7B69674-7A51-4AC6-8674-0330BA742CE4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12F0DA47-C4FF-4BFD-AB7A-D5833895A0F7}
 	EndGlobalSection
 EndGlobal

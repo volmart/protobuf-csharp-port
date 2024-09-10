@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -14,6 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
+[assembly: Guid("250ADE34-82FD-4BAE-86D5-985FBE589C4A")]
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
