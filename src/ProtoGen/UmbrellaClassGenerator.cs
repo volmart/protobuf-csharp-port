@@ -203,24 +203,14 @@ namespace Google.ProtocolBuffers.ProtoGen
             writer.WriteLine();
             writer.WriteLine("static {0}() {{", Descriptor.CSharpOptions.UmbrellaClassname);
             writer.Indent();
-            writer.WriteLine("byte[] descriptorData = global::System.Convert.FromBase64String(");
-            writer.Indent();
-            writer.Indent();
-            writer.WriteLine("string.Concat(");
-            writer.Indent();
-            // TODO(jonskeet): Consider a C#-escaping format here instead of just Base64.
-            byte[] bytes = Descriptor.Proto.ToByteArray();
-            string base64 = Convert.ToBase64String(bytes);
 
-            while (base64.Length > 60)
-            {
-                writer.WriteLine("\"{0}\", ", base64.Substring(0, 60));
-                base64 = base64.Substring(60);
-            }
-            writer.Outdent();
-            writer.WriteLine("\"{0}\"));", base64);
-            writer.Outdent();
-            writer.Outdent();
+            writer.WriteLine("byte[] descriptorData = new byte[] {");
+            
+            byte[] bytes = Descriptor.Proto.ToByteArray();
+            writer.WriteLine(string.Join(",", bytes));
+
+            writer.WriteLine("};");
+
             writer.WriteLine(
                 "pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {");
             writer.Indent();

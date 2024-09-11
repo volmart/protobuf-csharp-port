@@ -53,12 +53,16 @@ namespace Google.ProtocolBuffers.ProtoGen
         {
             this.descriptor = descriptor;
 
-            OptimizeSize = descriptor.File.Options.OptimizeFor ==
+            /*OptimizeSize = descriptor.File.Options.OptimizeFor ==
                            FileOptions.Types.OptimizeMode.CODE_SIZE;
             OptimizeSpeed = descriptor.File.Options.OptimizeFor ==
                             FileOptions.Types.OptimizeMode.SPEED;
             UseLiteRuntime = descriptor.File.Options.OptimizeFor ==
-                             FileOptions.Types.OptimizeMode.LITE_RUNTIME;
+                             FileOptions.Types.OptimizeMode.LITE_RUNTIME;*/
+
+            OptimizeSize = true;
+            UseLiteRuntime = false;
+
             //Lite runtime uses OptimizeSpeed code branches
             OptimizeSpeed |= UseLiteRuntime;
             RuntimeSuffix = UseLiteRuntime ? "Lite" : "";
